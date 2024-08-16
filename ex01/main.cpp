@@ -1,16 +1,17 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
 	ClapTrap Peter("Peter");
-	ClapTrap Hans("Hans");
+	ScavTrap Hans("Hans");
 
-	Hans = Peter;
 	Peter.attack("Enemy");
+	Hans.attack("Enemy");
 	Peter.beRepaired(5);
 	Peter.takeDamage(10);
-	Peter.attack("Enemy");
-
+	Hans.beRepaired(5);
+	Hans.takeDamage(10);
 	Hans.attack("Enemy vs Hans");
-
+	Hans.guardGate();
 }
