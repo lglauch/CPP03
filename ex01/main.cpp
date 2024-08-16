@@ -12,6 +12,6 @@ int main(void)
 	Peter.takeDamage(10);
 	Hans.beRepaired(5);
 	Hans.takeDamage(10);
-	Hans.attack("Enemy vs Hans");
+	Hans.attack("Enemy");
 	Hans.guardGate();
 }
