@@ -40,3 +40,45 @@ void FragTrap::highFivesGuys(void)
 {
 	std::cout << "HighFive from " + name << std::endl;
 }
+
+void	FragTrap::attack(const std::string &target)
+{
+	if (energypoints > 0 && hitpoints > 0)
+	{
+		std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackdamage << " points of damage!" << std::endl;
+		energypoints--;
+	}
+	else
+	{
+		std::cout << this->name << " cannot attack anymore" << std::endl;
+	}
+}
+
+
+void	FragTrap::takeDamage(unsigned int amount)
+{
+	if (hitpoints > 0)
+	{
+		std::cout << "FragTrap " << name << " takes damage for " << amount << " hitpoints!" << std::endl;
+		hitpoints = amount >  (unsigned)hitpoints ? 0 : hitpoints - amount;
+	}
+	else
+	{
+		std::cout << this->name << " has no hitpoints left!" << std::endl;
+	}
+}
+
+void	FragTrap::beRepaired(unsigned int amount)
+{
+	if (energypoints > 0 && hitpoints > 0)
+	{
+		std::cout << "FragTrap " << name << " is getting " << amount << " hitpoints back!" << std::endl;
+		energypoints--;
+		hitpoints += amount;
+	}
+	else
+	{
+		std::cout << this->name << " cannot heal anymore!" << std::endl;
+	}
+
+}

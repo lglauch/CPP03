@@ -12,12 +12,11 @@ int main(void)
 	Hans.attack("Enemy");
 	Dieter.attack("Enemy");
 	Peter.beRepaired(5);
-	Peter.takeDamage(10);
 	Hans.beRepaired(5);
-	Hans.takeDamage(10);
-	Hans.attack("Enemy");
-	Hans.guardGate();
 	Dieter.beRepaired(3);
-	Dieter.takeDamage(4);
+	Peter.takeDamage(10);
+	Hans.takeDamage(10);
+	Dieter.takeDamage(10);
+	Hans.guardGate();
 	Dieter.highFivesGuys();
 }

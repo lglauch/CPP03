@@ -7,9 +7,11 @@ int main(void)
 
 	Hans = Peter;
 	Peter.attack("Enemy");
+	Peter.takeDamage(9);
 	Peter.beRepaired(5);
-	Peter.takeDamage(10);
 	Peter.attack("Enemy");
+	Peter.takeDamage(9);
+	Peter.takeDamage(9);
 
 	Hans.attack("Enemy vs Hans");
 

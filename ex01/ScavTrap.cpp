@@ -53,3 +53,31 @@ void	ScavTrap::attack(const std::string &target)
 		std::cout << this->name << " cannot attack anymore" << std::endl;
 	}
 }
+
+void	ScavTrap::takeDamage(unsigned int amount)
+{
+	if (hitpoints > 0)
+	{
+		std::cout << "ScavTrap " << name << " takes damage for " << amount << " hitpoints!" << std::endl;
+		hitpoints = amount >  (unsigned)hitpoints ? 0 : hitpoints - amount;
+	}
+	else
+	{
+		std::cout << this->name << " has no hitpoints left!" << std::endl;
+	}
+}
+
+void	ScavTrap::beRepaired(unsigned int amount)
+{
+	if (energypoints > 0 && hitpoints > 0)
+	{
+		std::cout << "ScavTrap " << name << " is getting " << amount << " hitpoints back!" << std::endl;
+		energypoints--;
+		hitpoints += amount;
+	}
+	else
+	{
+		std::cout << this->name << " cannot heal anymore!" << std::endl;
+	}
+
+}
